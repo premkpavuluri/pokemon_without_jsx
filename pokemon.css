@@ -9,8 +9,24 @@ body {
 }
 
 .pokemons {
-  width: 900px;
+  width: fit-content;
   display: flex;
   flex-wrap: wrap;
   column-gap: 2em;
+}
+
+.page-title {
+  width: auto;
+  font-size: 2em;
+  text-align: center;
+  margin: 10px;
+}
+
+.card {
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 1px 1px whitesmoke;
+  padding: 10px;
+  margin: 10px;
 }

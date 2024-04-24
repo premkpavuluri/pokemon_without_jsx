@@ -1,7 +1,7 @@
 const Loading = (props) => React.createElement('div', null, 'Loading...');
 
 const PokemonInfo = ({ name, imageURL }) =>
-  React.createElement('figure', null,
+  React.createElement('figure', { className: 'card' },
     React.createElement('figcaption', null, name),
     React.createElement('img', { src: imageURL })
   );
@@ -41,7 +41,7 @@ class Pokemons extends React.Component {
   }
 
   reset() {
-    this.setState(({ loadUpto }) => ({ loadUpto: 10 }));
+    this.setState((_) => ({ loadUpto: 10 }));
   }
 
   render() {
@@ -52,6 +52,7 @@ class Pokemons extends React.Component {
       React.createElement(Pokemon, { key: id, pokemonId: id }));
 
     return React.createElement('div', null,
+      React.createElement('div', { className: 'page-title' }, 'Pokemon Gallary'),
       React.createElement('div', { className: 'pokemons' }, pokemons),
       React.createElement('button', { onClick: this.loadMore }, 'Load more'),
       React.createElement('button', { onClick: this.reset }, 'reset')
